@@ -44,12 +44,14 @@ namespace jablko3d {
 		vect p1;
 		vect p2;
 		vect p3;
+		vect area_vector;
 
 		double area;
 	};
 
 	struct stl_object {
 		stl_object();
+		stl_object(std::string);
 		std::string header;
 		unsigned int n_triangles;
 		std::vector<triangle> triangles;
