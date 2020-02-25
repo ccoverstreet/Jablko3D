@@ -1,1 +1,3 @@
 libjablko3d.so
+objects/*.o
+driver

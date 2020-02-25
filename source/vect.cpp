@@ -3,7 +3,7 @@
 // February 24, 2020
 // Contains the implmentation of the Vect class and vector operations. Fundamental data structure.
 
-#include "jablko3d.h"
+#include "../jablko3d.h"
 
 #include <cmath>
 

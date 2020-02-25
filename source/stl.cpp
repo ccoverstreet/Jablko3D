@@ -3,7 +3,7 @@
 // February 24, 2020
 // Implementation for reading binary STL files
 
-#include "jablko3d.h"
+#include "../jablko3d.h"
 
 #include <string>
 #include <vector>

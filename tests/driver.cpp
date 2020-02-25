@@ -1,5 +1,5 @@
 #include <iostream>
-#include "jablko3d.h"
+#include "../jablko3d.h"
 
 int main() {
 	jablko3d::vect x(1, 2, 3);

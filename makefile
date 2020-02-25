@@ -2,16 +2,16 @@ all: libjablko3d.so driver
 
 
 libjablko3d.so: vect.o stl.o
-	g++ -shared vect.o stl.o -o libjablko3d.so
+	g++ -shared objects/vect.o objects/stl.o -o libjablko3d.so
 
-vect.o: vect.cpp
-	g++ -fPIC -c vect.cpp
+vect.o: source/vect.cpp
+	g++ -fPIC -c source/vect.cpp -o objects/vect.o
 
-stl.o: stl.cpp
-	g++ -fPIC -c stl.cpp
+stl.o: source/stl.cpp
+	g++ -fPIC -c source/stl.cpp -o objects/stl.o
 
-driver: driver.cpp
-	g++ -Wl,-rpath,../Jablko3D driver.cpp -L. -ljablko3d -o driver
+driver: tests/driver.cpp
+	g++ -Wl,-rpath,../Jablko3D tests/driver.cpp -L. -ljablko3d -o driver
 	
 clean:
 	rm *.o
