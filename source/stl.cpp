@@ -19,7 +19,6 @@ jablko3d::triangle::triangle(jablko3d::vect normal_in, jablko3d::vect p1_in, jab
 	area_vector = normal * area;
 }
 
-jablko3d::stl_object::stl_object(std::string filename) {
+jablko3d::stl_object::stl_object(std::string filename, std::string units) {
 	std::cout << filename << "\n";
 }
-

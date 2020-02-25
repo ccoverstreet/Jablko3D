@@ -22,5 +22,5 @@ int main() {
 
 	printf("Area Projection: %f", jablko3d::dot_product(mytriangle.area_vector, jablko3d::vect(1, 1, 0).unit_vector()));
 
-	jablko3d::stl_object mystl("Hello.stl");
+	jablko3d::stl_object mystl("Hello.stl", "mm");
 } 

@@ -10,7 +10,7 @@
 namespace jablko3d {
 	struct vect {
 		vect();
-		vect(double, double, double); // Base constructor, no precomputing
+		vect(double x_in, double y_in, double z_in); // Base constructor, no precomputing
 		~vect();
 
 		double x;
@@ -31,14 +31,14 @@ namespace jablko3d {
 	vect operator * (double, vect); // Scalar Multiplication
 	vect operator * (vect, double); // Scalar Mulitplication
 
-	vect cross_product(vect, vect); // a x b
+	vect cross_product(vect a, vect b); // a x b
 	double dot_product(vect, vect); // Standard vector dot product
 }
 
 // STL File Read
 namespace jablko3d {
 	struct triangle {
-		triangle(vect, vect, vect, vect);
+		triangle(vect normal_in, vect p1_in, vect p2_in, vect p3_in);
 
 		vect normal;
 		vect p1;
@@ -51,7 +51,7 @@ namespace jablko3d {
 
 	struct stl_object {
 		stl_object();
-		stl_object(std::string);
+		stl_object(std::string filename, std::string units);
 		std::string header;
 		unsigned int n_triangles;
 		std::vector<triangle> triangles;

@@ -14,5 +14,5 @@ driver: tests/driver.cpp
 	g++ -Wl,-rpath,../Jablko3D tests/driver.cpp -L. -ljablko3d -o driver
 	
 clean:
-	rm *.o
+	rm objects/*.o
 	rm driver
