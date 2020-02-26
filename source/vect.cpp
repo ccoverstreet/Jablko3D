@@ -6,6 +6,7 @@
 #include "../jablko3d.h"
 
 #include <cmath>
+#include <iostream>
 
 jablko3d::vect::vect() {
 	x = 0;
@@ -17,6 +18,12 @@ jablko3d::vect::vect(double x_in, double y_in, double z_in) {
 	x = x_in;
 	y = y_in;
 	z = z_in;
+}
+
+jablko3d::vect::vect(char* float_vector) {
+	x = double(*((float*) float_vector));
+	y = double(*((float*) float_vector + 1));
+	z = double(*((float*) float_vector + 2));
 }
 
 jablko3d::vect::~vect() {}

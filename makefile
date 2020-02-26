@@ -1,4 +1,4 @@
-all: libjablko3d.so driver
+all: libjablko3d.so driver unit_tests
 
 
 libjablko3d.so: vect.o stl.o
@@ -12,6 +12,12 @@ stl.o: source/stl.cpp
 
 driver: tests/driver.cpp
 	g++ -Wl,-rpath,../Jablko3D tests/driver.cpp -L. -ljablko3d -o driver
+
+unit_tests: unit_tests.o
+	g++ -Wl,-rpath,../Jablko3D objects/unit_tests.o -L. -ljablko3d -o unit_tests
+
+unit_tests.o: tests/unit_tests.cpp
+	g++ -c tests/unit_tests.cpp -o objects/unit_tests.o
 	
 clean:
 	rm objects/*.o

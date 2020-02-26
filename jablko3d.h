@@ -11,6 +11,7 @@ namespace jablko3d {
 	struct vect {
 		vect();
 		vect(double x_in, double y_in, double z_in); // Base constructor, no precomputing
+		vect(char* float_vector);
 		~vect();
 
 		double x;
@@ -38,7 +39,8 @@ namespace jablko3d {
 // STL File Read
 namespace jablko3d {
 	struct triangle {
-		triangle(vect normal_in, vect p1_in, vect p2_in, vect p3_in);
+		triangle(vect normal_in, vect p1_in, vect p2_in, vect p3_in); // Constructor taking vects as parameters
+		triangle(char* facet); // Constructor that takes a binary STL facet as a parameter
 
 		vect normal;
 		vect p1;
@@ -51,7 +53,7 @@ namespace jablko3d {
 
 	struct stl_object {
 		stl_object();
-		stl_object(std::string filename, std::string units);
+		stl_object(std::string filepath, std::string units);
 		std::string header;
 		unsigned int n_triangles;
 		std::vector<triangle> triangles;

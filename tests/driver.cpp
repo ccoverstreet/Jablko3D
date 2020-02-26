@@ -20,7 +20,15 @@ int main() {
 	printf("Area = %f\n", mytriangle.area);
 	printf("Area Vector: %f %f %f\n", mytriangle.area_vector.x, mytriangle.area_vector.y, mytriangle.area_vector.z);
 
-	printf("Area Projection: %f", jablko3d::dot_product(mytriangle.area_vector, jablko3d::vect(1, 1, 0).unit_vector()));
+	printf("Area Projection: %f\n", jablko3d::dot_product(mytriangle.area_vector, jablko3d::vect(1, 1, 0).unit_vector()));
 
-	jablko3d::stl_object mystl("Hello.stl", "mm");
+	jablko3d::stl_object mystl("example_files/sphere_r-24mm.stl", "mm");
+
+	std::cout << mystl.triangles[0].normal.vector_string() << "\n";
+	std::cout << mystl.triangles[0].p1.vector_string() << "\n";
+	std::cout << mystl.triangles[0].p2.vector_string() << "\n";
+	std::cout << mystl.triangles[0].p3.vector_string() << "\n";
+
+	std::cout << mystl.n_triangles << "\n";
+	std::cout << mystl.triangles.size() << "\n";
 } 
